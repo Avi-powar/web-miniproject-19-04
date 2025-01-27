@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+</head>
+<body>
+    <h1>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo dicta dignissimos optio repellat praesentium possimus tempore sed accusamus quaerat id, eligendi perferendis odit temporibus in laborum deleniti quia sint commodi.</h1>
+
+    <form action="index" method="post">
+        {% csrf_token %}
+        <label for="name">name id:</label>
+        <input type="number" name="name_id" id="name_id"><br>
+
+        <label for="fname">first name:</label>
+        <input type="text" name="fname" id="fname"> <br>
+        <label for="lname">last name:</label>
+        <input type="text" name="lname" id="lname"> <br>
+
+        <input type="submit" value="submit form">
+    </form>
+
+
+    {% if messages %}
+    {% for message in messages %}
+
+    <div class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <Strong>{{message}}</Strong>
+      </div>
+      {% endfor %}
+      {% endif %} 
+
+</body>
+</html>
+<style>
+    .alert {
+  padding: 20px;
+  background-color: #f44336; /* Red */
+  color: white;
+  margin-bottom: 15px;
+}
+
+/* The close button */
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+  color: black;
+}
+</style>
